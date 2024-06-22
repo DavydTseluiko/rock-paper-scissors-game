@@ -71,6 +71,7 @@ function playRound(computerChoice, humanChoice) {
         (computerChoice === "paper" && humanChoice === "rock") ||
         (computerChoice === "scissors" && humanChoice === "paper")
     ) {
+        computerScore++;
         console.log(
             `You lose! ${capitalizedComputerOutput} beats ${capitalizedHumanOutput}`
         );
@@ -79,6 +80,7 @@ function playRound(computerChoice, humanChoice) {
         (computerChoice === "rock" && humanChoice === "paper") ||
         (computerChoice === "paper" && humanChoice === "scissors")
     ) {
+        humanScore++;
         console.log(
             `You won! ${capitalizedHumanOutput} beats ${capitalizedComputerOutput}`
         );
