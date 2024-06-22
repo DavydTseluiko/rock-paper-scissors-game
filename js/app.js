@@ -95,11 +95,42 @@ function playRound(computerChoice, humanChoice) {
 // * Write logic to play entire game
 
 // 1. Create a function
-// 2. Call function playRound five times
-// 3. Keep track of the scores and print them
-// 4. Return a winner
+function playGame() {
+    // 2. Call function playRound five times
+    for (i = 0; i < 5; i++) {
+        // 3. Ask for human and computer scores
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+        // 4. Get the function result and store it in the variable
+        let roundFunctionValue = playRound(computerSelection, humanSelection);
 
-playRound(computerSelection, humanSelection);
+        // 5. Keep track of the scores
+        if (roundFunctionValue === "Human") {
+            humanScore++;
+        } else if (roundFunctionValue === "Computer") {
+            computerScore++;
+        }
+    }
+
+    // 6. Print a winner
+    if (computerScore > humanScore) {
+        console.log(
+            `Computer won the game! You had ${humanScore} points while computer had ${computerScore}.`
+        );
+    } else if (computerScore < humanScore) {
+        console.log(
+            `You won the game! You had ${humanScore} points while computer had ${computerScore}.`
+        );
+    } else {
+        console.log(`It's a tie! You both had ${humanScore} points.`);
+    }
+}
+
+playGame();
+
+// * Code below needed to play only 1 round
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+
+// playRound(computerSelection, humanSelection);
