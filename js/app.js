@@ -71,23 +71,33 @@ function playRound(computerChoice, humanChoice) {
         (computerChoice === "paper" && humanChoice === "rock") ||
         (computerChoice === "scissors" && humanChoice === "paper")
     ) {
-        computerScore++;
         console.log(
             `You lose! ${capitalizedComputerOutput} beats ${capitalizedHumanOutput}`
         );
+        return "Computer";
     } else if (
         (computerChoice === "scissors" && humanChoice === "rock") ||
         (computerChoice === "rock" && humanChoice === "paper") ||
         (computerChoice === "paper" && humanChoice === "scissors")
     ) {
-        humanScore++;
         console.log(
             `You won! ${capitalizedHumanOutput} beats ${capitalizedComputerOutput}`
         );
+        return "Human";
     } else {
-        console.log(`You tied! ${capitalizedHumanOutput} does not beat ${capitalizedComputerOutput}`)
+        console.log(
+            `You tied! ${capitalizedHumanOutput} does not beat ${capitalizedComputerOutput}`
+        );
+        return "Nobody";
     }
 }
+
+// * Write logic to play entire game
+
+// 1. Create a function
+// 2. Call function playRound five times
+// 3. Keep track of the scores and print them
+// 4. Return a winner
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
