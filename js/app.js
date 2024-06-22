@@ -1,3 +1,7 @@
+// * Variables to keep track of the score
+let computerScore = 0;
+let humanScore = 0;
+
 // * Computer logic for the game
 
 // 1. Create a function for computer logic
@@ -34,7 +38,9 @@ function getHumanChoice() {
     // ! It's possible to combine 2 previous steps in 1 and realize it with do while loop
     let userChoice;
     do {
-        userChoice = prompt(`Enter "rock", "paper" or "scissors"`).toLowerCase();
+        userChoice = prompt(
+            `Enter "rock", "paper" or "scissors"`
+        ).toLowerCase();
     } while (
         userChoice !== "rock" &&
         userChoice !== "paper" &&
