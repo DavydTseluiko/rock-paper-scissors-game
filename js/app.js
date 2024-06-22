@@ -54,10 +54,40 @@ function getHumanChoice() {
 // * Logic of the round
 
 // 1. Create a function that takes computer and human choices as arguments
-// 2. Write rules of the game and return the result
-//      rock - beat scissors, and lose to paper
-//      paper - beat rock, and lose to scissors
-//      scissors - beat paper, and lose to rock
+function playRound(computerChoice, humanChoice) {
+    // ! These two variables below created in order to make output capitalized
+    let capitalizedComputerOutput =
+        computerChoice[0].toUpperCase() + computerChoice.slice(1);
+    let capitalizedHumanOutput =
+        humanChoice[0].toUpperCase() + humanChoice.slice(1);
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+    // 2. Write rules of the game and output the result
+    //      rock - beat scissors, and lose to paper
+    //      paper - beat rock, and lose to scissors
+    //      scissors - beat paper, and lose to rock
+    // 3. Increase score of winner
+    if (
+        (computerChoice === "rock" && humanChoice === "scissors") ||
+        (computerChoice === "paper" && humanChoice === "rock") ||
+        (computerChoice === "scissors" && humanChoice === "paper")
+    ) {
+        console.log(
+            `You lose! ${capitalizedComputerOutput} beats ${capitalizedHumanOutput}`
+        );
+    } else if (
+        (computerChoice === "scissors" && humanChoice === "rock") ||
+        (computerChoice === "rock" && humanChoice === "paper") ||
+        (computerChoice === "paper" && humanChoice === "scissors")
+    ) {
+        console.log(
+            `You won! ${capitalizedHumanOutput} beats ${capitalizedComputerOutput}`
+        );
+    } else {
+        console.log(`You tied! ${capitalizedHumanOutput} does not beat ${capitalizedComputerOutput}`)
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(computerSelection, humanSelection);
