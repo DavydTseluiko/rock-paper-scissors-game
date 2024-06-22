@@ -51,5 +51,13 @@ function getHumanChoice() {
     return userChoice;
 }
 
+// * Logic of the round
+
+// 1. Create a function that takes computer and human choices as arguments
+// 2. Write rules of the game and return the result
+//      rock - beat scissors, and lose to paper
+//      paper - beat rock, and lose to scissors
+//      scissors - beat paper, and lose to rock
+
 console.log(getComputerChoice());
 console.log(getHumanChoice());
