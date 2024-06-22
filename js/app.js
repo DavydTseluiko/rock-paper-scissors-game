@@ -1,4 +1,4 @@
-// Computer logic for the game
+// * Computer logic for the game
 
 // 1. Create a function for computer logic
 function getComputerChoice() {
@@ -21,8 +21,15 @@ function getComputerChoice() {
             break;
     }
 
-    // 5. return the result
+    // 5. Return the result
     return computerChoice;
 }
+
+// * Human choice
+
+// 1. Create a function
+// 2. Ask user fot his choice and store it in the variable
+// 3. If choice is not "rock", "paper" or "scissors" go to step 2
+// 4. Return the result of the function
 
 console.log(getComputerChoice());
