@@ -28,8 +28,22 @@ function getComputerChoice() {
 // * Human choice
 
 // 1. Create a function
-// 2. Ask user fot his choice and store it in the variable
-// 3. If choice is not "rock", "paper" or "scissors" go to step 2
-// 4. Return the result of the function
+function getHumanChoice() {
+    // 2. Ask user for his choice and store it in the variable and convert it to lowercase
+    // 3. If choice is not "rock", "paper" or "scissors" go to step 2
+    // ! It's possible to combine 2 previous steps in 1 and realize it with do while loop
+    let userChoice;
+    do {
+        userChoice = prompt(`Enter "rock", "paper" or "scissors"`).toLowerCase();
+    } while (
+        userChoice !== "rock" &&
+        userChoice !== "paper" &&
+        userChoice !== "scissors"
+    );
+
+    // 4. Return the result of the function
+    return userChoice;
+}
 
 console.log(getComputerChoice());
+console.log(getHumanChoice());
