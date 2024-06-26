@@ -1,5 +1,3 @@
-const playButtons = document.querySelectorAll("button");
-
 let computerScore = 0;
 let humanScore = 0;
 
@@ -23,12 +21,13 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
-  for (button of playButtons) {
-    button.addEventListener("click", (event) => {
-      return event.target.textContent;
-    });
-  }
+// Take choice from user and start the round
+const playButtons = document.querySelectorAll("button");
+
+for (let i = 0; i < playButtons.length; i++) {
+  playButtons[i].addEventListener("click", (event) =>
+    playRound(getComputerChoice(), event.target.textContent)
+  );
 }
 
 function playRound(computerChoice, humanChoice) {
@@ -89,5 +88,3 @@ function playGame() {
     console.log(`It's a tie! You both had ${humanScore} points.`);
   }
 }
-
-playButtons.forEach(playGame);
