@@ -1,4 +1,4 @@
-const playButtons = document.querySelector(".game-buttons");
+const playButtons = document.querySelectorAll("button");
 const result = document.querySelector(".result");
 const score = document.querySelector(".score");
 
@@ -74,6 +74,8 @@ function playRound(computerChoice, humanChoice) {
   defineWinner();
 }
 
-playButtons.addEventListener("click", (event) =>
-  playRound(getComputerChoice(), event.target.textContent)
-);
+for (let i = 0; i < playButtons.length; i++) {
+  playButtons[i].addEventListener("click", (e) => {
+    playRound(getComputerChoice(), e.target.textContent);
+  });
+}
