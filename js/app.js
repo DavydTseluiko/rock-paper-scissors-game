@@ -31,6 +31,8 @@ for (let i = 0; i < playButtons.length; i++) {
 }
 
 function playRound(computerChoice, humanChoice) {
+  const result = document.querySelector(".result");
+
   let capitalizedComputerOutput =
     computerChoice[0].toUpperCase() + computerChoice.slice(1);
   let capitalizedHumanOutput =
@@ -41,23 +43,17 @@ function playRound(computerChoice, humanChoice) {
     (computerChoice === "paper" && humanChoice === "rock") ||
     (computerChoice === "scissors" && humanChoice === "paper")
   ) {
-    console.log(
-      `You lose! ${capitalizedComputerOutput} beats ${capitalizedHumanOutput}`
-    );
+    result.textContent = `You lose! ${capitalizedComputerOutput} beats ${capitalizedHumanOutput}`;
     return "Computer";
   } else if (
     (computerChoice === "scissors" && humanChoice === "rock") ||
     (computerChoice === "rock" && humanChoice === "paper") ||
     (computerChoice === "paper" && humanChoice === "scissors")
   ) {
-    console.log(
-      `You won! ${capitalizedHumanOutput} beats ${capitalizedComputerOutput}`
-    );
+    result.textContent = `You won! ${capitalizedHumanOutput} beats ${capitalizedComputerOutput}`;
     return "Human";
   } else {
-    console.log(
-      `You tied! ${capitalizedHumanOutput} does not beat ${capitalizedComputerOutput}`
-    );
+    result.textContent = `You tied! ${capitalizedHumanOutput} does not beat ${capitalizedComputerOutput}`;
     return "Nobody";
   }
 }
