@@ -76,6 +76,6 @@ function playRound(computerChoice, humanChoice) {
 
 for (let i = 0; i < playButtons.length; i++) {
   playButtons[i].addEventListener("click", (e) => {
-    playRound(getComputerChoice(), e.target.textContent);
+    playRound(getComputerChoice(), e.target.classList.value);
   });
 }
