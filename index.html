@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="score"></div>
-    <div class="result">Start game by pressing rock, paper or scissors</div>
-    <button class="rock">rock</button>
-    <button class="paper">paper</button>
-    <button class="scissors">scissors</button>
+    <div class="wrapper">
+      <h1>Let's play Rock, Paper, Scissors!</h1>
+      <div class="result">
+        Play against computer. Start game by pressing rock, paper or scissors
+      </div>
+      <div class="button-wrapper">
+        <img src="./img/rock.svg" alt="Rock" class="rock" />
+        <img src="./img/paper.svg" alt="Paper" class="paper" />
+        <img src="./img/scissors.svg" alt="Scissors" class="scissorss" />
+      </div>
+      <div class="human-score"></div>
+      <div class="computer-score"></div>
+    </div>
     <script src="./js/app.js"></script>
   </body>
 </html>

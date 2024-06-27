@@ -1,11 +1,14 @@
-const playButtons = document.querySelectorAll("button");
+const playButtons = document.querySelectorAll("img");
 const result = document.querySelector(".result");
-const score = document.querySelector(".score");
+
+const humanScoreItem = document.querySelector(".human-score");
+const computerScoreItem = document.querySelector(".computer-score");
 
 let computerScore = 0;
 let humanScore = 0;
 
-score.textContent = `${humanScore} - ${computerScore}`;
+humanScoreItem.textContent = `Your score: ${humanScore}`;
+computerScoreItem.textContent = `Computer score: ${computerScore}`;
 
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -69,7 +72,8 @@ function playRound(computerChoice, humanChoice) {
     computerScore++;
   }
 
-  score.textContent = `${humanScore} - ${computerScore}`;
+  humanScoreItem.textContent = `Your score: ${humanScore}`;
+  computerScoreItem.textContent = `Computer score: ${computerScore}`;
 
   defineWinner();
 }
